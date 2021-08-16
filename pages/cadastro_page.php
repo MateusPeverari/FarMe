@@ -13,7 +13,7 @@
   <h1>Cadastro</h1>
 
   <p>
-    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Luiz Augusto" />
+    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Nome" />
   </p>
 
   <p>
@@ -28,7 +28,7 @@
 
   <p>
     <select id="atv_cad" name="atv_cad" required="required">
-      <option value="placeholder">Principal atividade</option>
+      <option disable select>Principal atividade</option>
       <option value="1">Grãos</option>
       <option value="2">Algodão</option>
       <option value="3">Hortifruti</option>
@@ -39,7 +39,7 @@
 
   <p>
     <select id="atv_cad" name="tamanho_cad" required="required">
-      <option value="placeholder">Qual o tamanho da sua propriedade?</option>
+      <option disable select>Qual o tamanho da sua propriedade?</option>
       <option value="1">Até 10 ha</option>
       <option value="2">De 10,1 à 25 ha</option>
       <option value="3">De 25,1 à 50 ha</option>
@@ -50,7 +50,7 @@
 
   <p>
     <select id="atv_cad" name="uso_cad" required="required">
-      <option value="placeholder">Já usou algum software de gestão agrícola?</option>
+      <option disable select>Já usou algum software de gestão agrícola?</option>
       <option value="1">Sim</option>
       <option value="0">Não</option>
     </select>
