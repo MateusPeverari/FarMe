@@ -6,6 +6,16 @@
 
 <link href="../style/about.css" rel="stylesheet" type="text/css">
 
+
+
+<script>
+window.addEventListener('scroll', function() {
+  let header = document.querySelector('header');
+  let windowPosition = window.scrollY > 0;
+  header.classList.toggle('scrolling-active', windowPosition);
+})
+</script>
+
 <body>
   <div class="about-page">
     <div class="initial-screen">

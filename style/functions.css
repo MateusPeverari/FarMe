@@ -9,9 +9,10 @@ li, a {
   font-weight: 500;
   font-size: 20px;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-family: 'Roboto', sans-serif;
 }
+
 
 header {
   display: flex;
@@ -21,7 +22,20 @@ header {
   position: fixed;
   background-color: #E98830;
   width: 100%;
+  border-bottom: 2px solid rgba(7, 6, 6, 0.1);
+  height: 60px;
+  transition: height .5s ease;
+  transition: background-color .5s ease;
 }
+
+.scrolling-active {
+  background-color: #E98830;
+  height: auto;
+}
+
+.scrolling-active a {
+  color: #ffffff;
+} 
 
 
 .logo {

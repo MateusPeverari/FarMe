@@ -1,3 +1,30 @@
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px, 10%;
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    border-bottom: 2px solid rgba(7, 6, 6, 0.1);
+    height: 60px;
+    transition: height .5s ease;
+    transition: background-color .5s ease;
+  }
+
+  header a {
+    color: #000000;
+  }
+  
+  .scrolling-active {
+    background-color: #E98830;
+    height: auto;
+  }
+  
+  .scrolling-active a {
+    color: #ffffff;
+  }
+
 h1{
     color: #000000;
     font-size: 0px;

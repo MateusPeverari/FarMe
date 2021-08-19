@@ -33,10 +33,10 @@
             <img class="logo" src="../assets/images/logo.png" alt="logo" height="40px">
             <nav>
               <ul class="nav_links">
-                <li><a href="#">FarMe</a></li>
-                <li><a href="#">Sobre Nós</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="../pages/home.php">FarMe</a></li>
+                <li><a href="../pages/about.php">Sobre Nós</a></li>
+                <li><a href="../pages/contact_page.php">Contato</a></li>
+                <li><a href="../pages/login_page.php">Login</a></li>
               </ul>
             </nav>              
           </header>
