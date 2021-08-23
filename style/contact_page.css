@@ -2,24 +2,43 @@
   display: flex;
   align-items: stretch;
   height: 100vh;
+  width: 100vw;
+}
+
+@media screen and (max-width: 900px) {    
+  aside {
+    visibility: hidden;
+    display: none;
+  }  
+
+  main {
+    display: flex;
+    justify-content: center; 
+  }
 }
 
  aside {
   flex: 7;
-  background: url(../assets/images/contact-image.png);
-  background-repeat: no-repeat;  
+  background: url(../assets/images/contact-image.jpg);
+  background-repeat: no-repeat;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px 80px;
-}
+    padding: 18vh 6vw;
+    display: block;
+    margin-right: 5%;
+    width: 50vw
+ }
+
+
 
 main {
   flex: 11;
-    margin-top: 100px;
+    margin-top: 15vh;
     display: flex;
     align-items: flex-start;
+    width: 50vw;
 
 }
 
@@ -27,17 +46,17 @@ main {
 
 h1 {
   color: #444444;
-  position: absolute;
+  position: flex;
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  font-size: 30px;
-  margin-top: -60px;
+  font-size: 1.8rem;
+  margin-top: -9vh;
   font-weight: bolder;
 }
 
 h4 {
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 1.25rem;
+  margin-top: 1.5vh;
   margin-left: 5px;
   color: #444444;
   font-weight: 400;
@@ -46,15 +65,16 @@ h4 {
 
 #contact-form {
   margin-top: 50px;
-  max-width: 680px;
+  max-width: 50vw;
 }
 
 input {
   border-radius: 20px;
-  width: 290px;
-  height: 63px;
-  margin-bottom: 30px;
-  margin-right: 30px;
+  width: 22vw;
+  height: 9.5vh;
+  margin-bottom: 4.5vh;
+  margin-right: 2.2vw;
+  margin-top: -3vh;
 }
 
 input:focus{
@@ -64,11 +84,11 @@ input:focus{
 
 select {
   border-radius: 20px;
-  width: 290px;
-  height: 63px;
-  margin-bottom: 30px;
-  margin-right: 30px;
-  font-size: 16px;
+  width: 22vw;
+  height: 9.5vh;
+  margin-bottom: 4.5vh;
+  margin-right: 2.2vw;
+  font-size: 1rem;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
 }
@@ -81,9 +101,10 @@ select:focus{
 }
 
 textarea {
-  width: 610px;
+  width: 46vw;
   border-radius: 20px;
   font-family: 'Roboto', sans-serif;
+  margin-top: -10px;
 }
 
 textarea:focus{
@@ -93,17 +114,17 @@ textarea:focus{
 
 button {
   position: absolute;
-  width: 290px;
-  height: 59px;
-  margin-left: 170px;
+  width: 22vw;
+  height: 9vh;
+  margin-left: 12vw;
   background-color: #E98830;
   border-radius: 20px;  
   color: #fff;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
 }
 
 ::placeholder {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }

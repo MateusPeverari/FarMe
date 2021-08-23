@@ -8,11 +8,9 @@
 <br><br>
 
 <div id="contact-page">
-
   <aside>
 
   </aside>
-
 
   <main>
     <div class="main-content">
