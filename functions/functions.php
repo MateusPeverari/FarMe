@@ -1,4 +1,5 @@
 <?php 
+
   //Conexão com o Banco de Dados
   function pdo_connect_mysql() {
     $DATABASE_HOST = 'localhost';

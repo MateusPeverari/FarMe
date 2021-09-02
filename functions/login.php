@@ -1,9 +1,7 @@
 <?php
   // Login
-  
   $email_login = $_POST["email_login"];
   $senha_login = $_POST["senha_login"];
-
 
     include("conexao.php"); 
     
@@ -21,21 +19,25 @@
             $stmt = $pdo->prepare("SELECT * FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login'");
             $stmt->execute();
             $sql = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $result = mysqli_query($conexao,$sql);
+            // $result = mysqli_query($conexao,$sql);
             
-            /*$NOME = $pdo->prepare("SELECT Nome FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login'");
+            $NOME = $pdo->prepare("SELECT Nome FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login'");
             $NOME->execute();
             $nome = $NOME->fetch(PDO::FETCH_ASSOC);
-
-            
-            if(!isset($_SESSION)) 
-            { 
-                session_start(); 
-            }
+                
+            session_start(); 
             $_SESSION['nome'] = $nome;
 
-            setcookie("email",$email_login);*/
-            header("Location:../pages/home.php");
+            setcookie("email",$email_login);
+
+            $FAZENDA = mysqli_query($conexao, "SELECT * FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login' AND Nome_Fazenda IS NOT NULL") or die("erro ao selecionar");
+
+            // CORRIGIR
+            if (mysqli_num_rows($FAZENDA)<=0) {
+              header("Location:../pages/int-cad_fazenda.php");
+            }else {
+              header("Location:../pages/int-home.php");
+            }
       mysqli_close($conexao);
     }
 ?>

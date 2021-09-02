@@ -1,22 +1,29 @@
 <html>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="../style/functions.css" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="../style/cadastro_page.css" rel="stylesheet" type="text/css">
+  <title>FarMe</title>
+</head>
 
-<link href="../style/cadastro_page.css" rel="stylesheet" type="text/css">
+<div id="cad_page">
+  <img src="../assets/images/Illustration.svg" id="cad_img" />
 
-<div id="cad_page"> 
-    <img src="../assets/images/Illustration.svg" id="cad_img"/>
 
-    
-    <h2> Gerencie sua fazenda <br>
-         de forma rápida <br>
-         e eficiente! </h2>
-    
+  <h2> Gerencie sua fazenda <br>
+    de forma rápida <br>
+    e eficiente! </h2>
+
 </div>
 
-<img src="../assets/images/logo.png" id="logo_img"/>
+<img src="../assets/images/logo.png" id="logo_img" />
 
 <form method="post" action="../functions/cadastro.php">
   <br><br><br>
@@ -24,7 +31,7 @@
   <h1>Cadastro</h1>
 
   <p>
-    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Luiz Augusto" />
+    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Nome" />
   </p>
 
   <p>
@@ -76,7 +83,7 @@
   </p>
 
   <p>
-    <input type="submit" value="Cadastrar" id="cad"/>
+    <input type="submit" value="Cadastrar" id="cad" />
   </p>
 
   <p class="link" id="link_cad">
@@ -84,4 +91,5 @@
     <a href="../pages/login_page.php"> Ir para Login </a>
   </p>
 </form>
+
 </html>
