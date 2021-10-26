@@ -27,16 +27,17 @@
                 
             session_start(); 
             $_SESSION['nome'] = $nome;
+            $_SESSION['email'] = $email_login;
 
             setcookie("email",$email_login);
 
-            $FAZENDA = mysqli_query($conexao, "SELECT * FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login' AND Nome_Fazenda IS NOT NULL") or die("erro ao selecionar");
+            $fazenda = mysqli_query($conexao,"SELECT * FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login' AND Nome_Fazenda IS NULL") or die("erro ao selecionar");
 
-            // CORRIGIR
-            if (mysqli_num_rows($FAZENDA)<=0) {
+            if (mysqli_num_rows($fazenda) > 0) {
               header("Location:../pages/int-cad_fazenda.php");
             }else {
-              header("Location:../pages/int-home.php");
+              // TESTES, CORRIGIR REDIRECIONAMENTO
+              header("Location:../pages/cadastro-ciclo_page.php");
             }
       mysqli_close($conexao);
     }

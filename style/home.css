@@ -36,7 +36,7 @@ h1{
 p{
     color: #000000;
     font-size: 20px;
-    font-family: ROBOTO;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
@@ -45,7 +45,7 @@ h2{
     font-size: 50px;
     margin-top: 340px;
     margin-left: 1200px;
-    font-family: ROBOTO;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
 
 

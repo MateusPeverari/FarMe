@@ -1,6 +1,9 @@
 <html>
 
 <head>
+  <?php 
+    include '../functions/conexao.php';
+    ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="../style/functions.css" rel="stylesheet" type="text/css">
@@ -12,6 +15,18 @@
   <link href="../style/cadastro_page.css" rel="stylesheet" type="text/css">
   <title>FarMe</title>
 </head>
+
+<?php
+  $sql = "SELECT * FROM atividade";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  $activities = $stmt->fetchAll();
+
+  $sql = "SELECT * FROM tamanho";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  $size = $stmt->fetchAll();
+?>
 
 <div id="cad_page">
   <img src="../assets/images/Illustration.svg" id="cad_img" />
@@ -46,23 +61,19 @@
 
   <p>
     <select id="atv_cad" name="atv_cad" required="required">
-      <option value="placeholder">Principal atividade</option>
-      <option value="1">Grãos</option>
-      <option value="2">Algodão</option>
-      <option value="3">Hortifruti</option>
-      <option value="4">Café</option>
-      <option value="5">Não se aplica</option>
+      <option value="placeholder" disabled selected>Principal atividade</option>
+      <?php foreach($activities as $activity): ?>
+      <option value="<?= $activity['Cdg_Atividade']; ?>"><?= $activity['Atividade']; ?></option>
+      <?php endforeach; ?>
     </select>
   </p>
 
   <p>
     <select id="atv_cad2" name="tamanho_cad" required="required">
-      <option value="placeholder">Qual o tamanho da sua propriedade?</option>
-      <option value="1">Até 10 ha</option>
-      <option value="2">De 10,1 à 25 ha</option>
-      <option value="3">De 25,1 à 50 ha</option>
-      <option value="4">De 50,1 à 100 ha</option>
-      <option value="5">Acima de 100 ha</option>
+      <option value="placeholder" disabled selected>Qual o tamanho da sua propriedade?</option>
+      <?php foreach($size as $size): ?>
+      <option value="<?= $size['Cdg_Tamanho']; ?>"><?= $size['Tamanho']; ?></option>
+      <?php endforeach; ?>
     </select>
   </p>
 
@@ -79,7 +90,7 @@
   </p>
 
   <p>
-    <input id="senha_cad2" name="senha_cad" required="required" type="password" placeholder="Confirma senha" />
+    <input id="senha_cad2" name="senha_cad2" required="required" type="password" placeholder="Confirma senha" />
   </p>
 
   <p>
