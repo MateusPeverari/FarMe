@@ -12,25 +12,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ciclo</title>
+  <title>Recebidos</title>
 </head>
 
 <body>
+
   <?php
   $sql = "SELECT * FROM cadastro WHERE Email = '$email'";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
   $informacoes = $stmt->fetchAll();
 
-  $sql = "SELECT * FROM safra WHERE Id_Cad = '$id'";
+  $sql = "SELECT * FROM ciclo WHERE Id_Cad = '$id'";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
-  $id_safra = $stmt->fetchAll();
+  $id_ciclo = $stmt->fetchAll();
+
   ?>
 
-  <h1>Cadastro de Ciclo</h1>
+  <form action="cad_recebidos.php" method="post">
 
-  <form method="post" action="../functions/cad_ciclo.php">
+    <label for="operacao">Operação</label>
+    <input type="text" name="operacao" required>
 
     <label for="nome_fazenda">Fazenda</label>
     <select name="nome_fazenda" required="required">
@@ -39,27 +42,24 @@
       <?php endforeach; ?>
     </select>
 
-    <label for="safra">Safra</label>
-    <select name="safra" required>
-      <?php foreach($id_safra as $id_safra): ?>
-      <option value="<?= $id_safra['Id']; ?>"><?= $id_safra['Safra']; ?></option>
+    <label for="valor">Valor</label>
+    <input type="text" name="valor" required>
+
+    <label for="ciclo">Ciclo</label>
+    <select name="ciclo" required>
+      <?php foreach($id_ciclo as $id_ciclo): ?>
+      <option value="<?= $id_ciclo['Nome_Ciclo']; ?>"><?= $id_ciclo['Nome_Ciclo']; ?></option>
       <?php endforeach; ?>
     </select>
 
-    <label for="cultura">Cultura</label>
-    <input type="text" name="cultura" required>
+    <label for="data_lancamento">Data</label>
+    <input type="date" name="data_lancamento" required>
 
-    <label for="nome_ciclo">Nome do Ciclo</label>
-    <input type="text" name="nome_ciclo" required>
+    <label for="pessoa">Pessoa Responsável</label>
+    <input type="text" name="pessoa" required>
 
-    <label for="inicio">Início</label>
-    <input type="date" name="inicio">
-
-    <label for="final">Fim</label>
-    <input type="date" name="final">
-
-    <label for="receita_esperada">Receita esperada</label>
-    <input type="text" name="receita_esperada">
+    <label for="observacao">Observações</label>
+    <input type="text" name="observacao">
 
     <button>Enviar</button>
 
@@ -68,6 +68,8 @@
   <form action="int-home.php">
     <button>Cancelar</button>
   </form>
+
+
 
 </body>
 

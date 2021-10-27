@@ -24,10 +24,15 @@
             $NOME = $pdo->prepare("SELECT Nome FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login'");
             $NOME->execute();
             $nome = $NOME->fetch(PDO::FETCH_ASSOC);
+
+            $stmt = $pdo->prepare("SELECT Id FROM cadastro WHERE Email = '$email_login' AND Senha = '$senha_login'");
+            $stmt->execute();
+            $ID = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 
             session_start(); 
             $_SESSION['nome'] = $nome;
             $_SESSION['email'] = $email_login;
+            $_SESSION['ID'] = $ID;
 
             setcookie("email",$email_login);
 
@@ -36,8 +41,7 @@
             if (mysqli_num_rows($fazenda) > 0) {
               header("Location:../pages/int-cad_fazenda.php");
             }else {
-              // TESTES, CORRIGIR REDIRECIONAMENTO
-              header("Location:../pages/cadastro-ciclo_page.php");
+              header("Location:../pages/int-home.php");
             }
       mysqli_close($conexao);
     }
