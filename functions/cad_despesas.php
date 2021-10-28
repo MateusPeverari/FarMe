@@ -16,22 +16,23 @@
     $observacao = $_POST["observacao"];
     $conta = $_POST["conta"];
 
-    $sql = "INSERT INTO recebidos (Nome_Fazenda, Operacao, Id_Ciclo, Valor, Data_Pag, Pessoa, Obs, Id_Cad, Id_Conta) VALUES ('$nome_fazenda', '$operacao', '$ciclo', '$valor', '$data', '$pessoa', '$observacao', '$id', '$conta');";
+    $sql = "INSERT INTO despesas (Nome_Fazenda, Operacao, Valor, Id_Ciclo, Data_Pag, Obs,Pessoa, Id_Cad, Id_Conta) VALUES ('$nome_fazenda', '$operacao', '$valor', '$ciclo', '$data', '$pessoa', '$observacao', '$id', '$conta');";
 
     $request = mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
+    
+    
     
     $stmt = $pdo->prepare("SELECT saldo FROM conta_banco WHERE Id = '$conta'");
     $stmt->execute();
     $SALDO = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $saldo = implode($SALDO[0]);
     
-    $saldo = $saldo + $valor;
+    $saldo = $saldo - $valor;
     
     $sql = "UPDATE conta_banco SET Saldo = '$saldo' WHERE Id = '$conta'";
     mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
-
+    
     mysqli_close($conexao);
-
     echo "<script language='javascript' type='text/javascript'>
     alert('Cadastro feito com sucesso');window.location
     .href='../pages/int-home.php';</script>";;

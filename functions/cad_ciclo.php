@@ -28,6 +28,6 @@ if(isset($_POST['nome_fazenda'])) {
 
     echo "<script language='javascript' type='text/javascript'>
     alert('Cadastro feito com sucesso');window.location
-    .href='../pages/cadastro-ciclo_page.php';</script>";;
+    .href='../pages/int-home.php';</script>";;
   }
 ?>

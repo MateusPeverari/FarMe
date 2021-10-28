@@ -12,31 +12,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recebidos</title>
+  <title>Despesas</title>
 </head>
 
 <body>
 
   <?php
-  $sql = "SELECT * FROM cadastro WHERE Email = '$email'";
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute();
-  $informacoes = $stmt->fetchAll();
+    $sql = "SELECT * FROM cadastro WHERE Email = '$email'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $informacoes = $stmt->fetchAll();
 
-  $sql = "SELECT * FROM ciclo WHERE Id_Cad = '$id'";
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute();
-  $id_ciclo = $stmt->fetchAll();
+    $sql = "SELECT * FROM ciclo WHERE Id_Cad = '$id'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $id_ciclo = $stmt->fetchAll();
 
-  $sql = "SELECT * FROM conta_banco WHERE Id_Cad = '$id'";
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute();
-  $id_conta = $stmt->fetchAll();
-
+    $sql = "SELECT * FROM conta_banco WHERE Id_Cad = '$id'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $id_conta = $stmt->fetchAll();
   ?>
 
-  <form action="../functions/cad_recebidos.php" method="post">
-
+  <form action="../functions/cad_despesas.php" method="post">
     <label for="operacao">Operação</label>
     <input type="text" name="operacao" required>
 
@@ -72,7 +70,6 @@
 
     <label for="observacao">Observações</label>
     <input type="text" name="observacao">
-
     <button>Enviar</button>
 
   </form>
@@ -80,8 +77,6 @@
   <form action="int-home.php">
     <button>Cancelar</button>
   </form>
-
-
 
 </body>
 
