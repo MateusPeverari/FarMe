@@ -14,6 +14,8 @@
     <input type="text" name="safra" required>
     <button>Enviar</button>
   </form>
+
+  <form action="safra_page.php">Cancelar</form>
 </body>
 
 </html>

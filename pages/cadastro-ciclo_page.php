@@ -65,7 +65,7 @@
 
   </form>
 
-  <form action="int-home.php">
+  <form action="ciclo_page.php">
     <button>Cancelar</button>
   </form>
 
